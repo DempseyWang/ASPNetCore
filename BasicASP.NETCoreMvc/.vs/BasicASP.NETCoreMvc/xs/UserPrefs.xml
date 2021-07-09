@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{698CADE0-7286-4FBB-BC1F-10A9A3B9AA2E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs">
+    <Files>
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/ActionResultControllerTests.cs" Line="75" Column="77" />
+      <File FileName="BasicASP.NETCoreMvcAPP/appsettings.json" Line="1" Column="1" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/ActionResultController.cs" Line="92" Column="44" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs" Line="40" Column="53" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Login.cshtml" Line="1" Column="1" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Page.cshtml" Line="1" Column="1" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Startup.cs" Line="84" Column="17" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Program.cs" Line="10" Column="1" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/MoviesController.cs" Line="1" Column="1" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Models/User.cs" Line="3" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BasicASP.NETCoreMvc" expanded="True">
+            <Node name="BasicASP.NETCoreMvcAPP" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="AuthController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Auth" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="BasicASP.NETCoreMvc" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BasicASP.NETCoreMvcAPP PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/bin.wang2/Desktop/ASPNetCore/BasicASP.NETCoreMvc/BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs" relfile="BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs" line="40" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
