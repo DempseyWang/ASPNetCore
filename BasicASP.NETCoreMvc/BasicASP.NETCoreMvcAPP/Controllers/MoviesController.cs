@@ -6,33 +6,47 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace BasicASP.NETMvc.Controllers
 {
     //[Authorize]
     public class MoviesController : Controller
     {
-        private MovieDBContext db = new MovieDBContext();
-
+        MovieDBContext db=new MovieDBContext();
         // GET: Movies/Index
+        [HttpGet]
         public ActionResult Index(string movieGenre, string searchString)
         {
             var genreLst = new List<string>();
-
+            db.Database.EnsureCreated();
+            
             var genreQry = from d in db.Movies
                 orderby d.Genre
                 select d.Genre;
+            //var genreQry=db.Movies.ToList();
 
             genreLst.AddRange(genreQry.Distinct());
             ViewBag.MovieGenre = new SelectList(genreLst);
 
             // # homework 3 -- read movies data from loacl-db,please use linq
-
-            
+            var data=from d in db.Movies
+                    select d;
             // # homework 7 -- filte movies data by conditions
-            
+            if(!String.IsNullOrEmpty(movieGenre))
+            {
+                data=from d in data
+                    where d.Genre==movieGenre
+                    select d;
+            }
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                data=from d in data
+                    where d.Title.Contains(searchString)
+                    select d;
+            }
 
-            return View();
+            return View(data.ToList());
         }
 
         [HttpPost]

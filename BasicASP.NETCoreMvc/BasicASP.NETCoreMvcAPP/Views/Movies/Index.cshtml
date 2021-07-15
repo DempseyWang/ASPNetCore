@@ -36,6 +36,25 @@
 
         <th></th>
     </tr>
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Rating)
+        </td>
+    </tr>
+    }
     @* # homework 2 -- show the movies on this site  *@
     
     @* # homework 6 -- add Edit,Details,Delete buttons every line and them shou link to action *@

@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
+using BasicASP.NETMvc.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BasicASP.NETCoreMvcAPP
 {
@@ -30,15 +35,13 @@ namespace BasicASP.NETCoreMvcAPP
             services.AddSession();
             //注册Cookie认证服务
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie(options =>
+            //后台管理员cookie服务
+            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
             {
-                // Cookie settings
-                options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-
-                options.LoginPath = "/Account/Login";
-                options.AccessDeniedPath = "/Account/AccessDenied";
-                options.SlidingExpiration = true;
+                options.LoginPath = "/admin/Login/Index";//登录路径
+                options.LogoutPath = "/admin/Login/LogOff";//退出路径
+                options.AccessDeniedPath = new PathString("/Error/Forbidden");//拒绝访问页面
+                options.Cookie.Path = "/";
             });
             services.AddCors(options =>
             {
@@ -51,7 +54,7 @@ namespace BasicASP.NETCoreMvcAPP
                     );
 
             });
-
+            services.AddDbContext<MovieDBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,17 +68,19 @@ namespace BasicASP.NETCoreMvcAPP
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
-            app.UseRouting();
-            app.UseCors(MyAllowSpecificOrigins);
-            app.UseSession();
             //注意app.UseAuthentication方法一定要放在下面的app.UseMvc方法前面，否者后面就算调用HttpContext.SignInAsync进行用户登录后，使用
             //HttpContext.User还是会显示用户没有登录，并且HttpContext.User.Claims读取不到登录用户的任何信息。
             //这说明Asp.Net OWIN框架中MiddleWare的调用顺序会对系统功能产生很大的影响，各个MiddleWare的调用顺序一定不能反
             app.UseCookiePolicy();
+            app.UseRouting();
+            app.UseCors(MyAllowSpecificOrigins);
+            
+            
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

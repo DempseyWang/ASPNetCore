@@ -17,7 +17,7 @@
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/bin.wang2/.config/NuGet/NuGet.Config"
+          "/Users/bin.wang2/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -45,9 +45,17 @@
               "target": "Package",
               "version": "[5.0.7, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.EntityFrameworkCore.sqlite": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.sqlite.Core": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "sqlitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.0.4, )"
             },
             "xunit": {
               "target": "Package",

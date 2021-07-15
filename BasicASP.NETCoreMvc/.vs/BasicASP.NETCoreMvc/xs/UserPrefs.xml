@@ -2,15 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs">
     <Files>
       <File FileName="BasicASP.NETCoreMvcAPP/Controllers/ActionResultControllerTests.cs" Line="75" Column="77" />
-      <File FileName="BasicASP.NETCoreMvcAPP/appsettings.json" Line="1" Column="1" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/ActionResultController.cs" Line="92" Column="44" />
+      <File FileName="BasicASP.NETCoreMvcAPP/appsettings.json" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/ActionResultController.cs" />
       <File FileName="BasicASP.NETCoreMvcAPP/Controllers/AuthController.cs" Line="40" Column="53" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Login.cshtml" Line="1" Column="1" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Page.cshtml" Line="1" Column="1" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Startup.cs" Line="84" Column="17" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Program.cs" Line="10" Column="1" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/MoviesController.cs" Line="1" Column="1" />
-      <File FileName="BasicASP.NETCoreMvcAPP/Models/User.cs" Line="3" Column="18" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Login.cshtml" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Views/Auth/Page.cshtml" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Startup.cs" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Program.cs" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Controllers/MoviesController.cs" />
+      <File FileName="BasicASP.NETCoreMvcAPP/Models/User.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,14 +27,6 @@
               </Node>
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="BasicASP.NETCoreMvc" expanded="True" />
         </State>
       </Pad>
     </Pads>

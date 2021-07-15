@@ -32,6 +32,10 @@ namespace BasicASP.NETMvc.Models
 
     public class MovieDBContext : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+                optionsBuilder.UseSqlite("Data source=/Users/bin.wang2/Desktop/LocalDB/LocalDB.sqlite3");    //创建文件夹的位置        
+        }
         public DbSet<Movie> Movies { get; set; }
     }
 }
