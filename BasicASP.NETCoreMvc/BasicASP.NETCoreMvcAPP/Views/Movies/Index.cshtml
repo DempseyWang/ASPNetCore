@@ -6,6 +6,7 @@
 <p>
     
     @* # homework 4 -- add button for redirected to create page  *@
+    <button onclick="location.href='@Url.Action("Create","Movies")'">新增</button>
 
     @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
     {
@@ -36,6 +37,7 @@
 
         <th></th>
     </tr>
+    @* # homework 2 -- show the movies on this site  *@
     @foreach (var item in Model) {
     <tr>
         <td>
@@ -53,11 +55,10 @@
         <td>
             @Html.DisplayFor(modelItem=>item.Rating)
         </td>
+        @* # homework 6 -- add Edit,Details,Delete buttons every line and them shou link to action *@
+        <td><a href="@Url.Action("Details","Movies",new {id=item.ID})">查看详情</a></td>
+        <td><a href="@Url.Action("Edit","Movies",new {id=item.ID})">编辑</a></td>
+        <td><a href="@Url.Action("Delete","Movies",new {id=item.ID})">删除</a></td>
     </tr>
     }
-    @* # homework 2 -- show the movies on this site  *@
-    
-    @* # homework 6 -- add Edit,Details,Delete buttons every line and them shou link to action *@
-    
-
 </table>

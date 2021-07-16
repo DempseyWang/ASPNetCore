@@ -85,7 +85,8 @@ namespace BasicASP.NETMvc.Controllers
             Movie movie)
         {
             // # homework 5 -- save data to loacl-db
-
+            db.Movies.Add(movie);
+            db.SaveChanges();
             return View(movie);
         }
 
@@ -97,8 +98,9 @@ namespace BasicASP.NETMvc.Controllers
             {
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
+            var data=db.Movies.Find(id);
 
-            return View();
+            return View(data);
         }
 
         // POST: Movies/Edit/5
@@ -122,9 +124,14 @@ namespace BasicASP.NETMvc.Controllers
         {
             // # homework 9 -- find data by id 
             // when id is null ,return HttpStatusCode.BadRequest;
-            
-            
-            return View();
+            if (id == null)
+            {
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
+            }
+            Movie movie = db.Movies.Find(id);
+            db.Movies.Remove(movie);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: Movies/Delete/5
